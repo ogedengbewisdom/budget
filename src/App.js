@@ -1,8 +1,11 @@
+import { Fragment } from "react";
+import Home from "./Home/Home";
+
 function App() {
   return (
-    <div>
-      <h2>Let's get started!</h2>
-    </div>
+    <Fragment>
+      <Home />
+    </Fragment>
   );
 }
 
