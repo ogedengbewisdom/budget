@@ -1,0 +1,18 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: brown;
+    box-shadow: 0 2px 8px rgba(86, 71, 71, 0.736);
+    animation: header 2s ease-out;
+    z-index: 30;
+}
+
+@keyframes header {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
