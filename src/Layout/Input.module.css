@@ -1,0 +1,21 @@
+.inputs {
+
+    display: flex;
+    padding: 0.5rem;
+}
+
+.inputs label {
+    flex: 1;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.inputs input {
+    flex: 3;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    
+}
