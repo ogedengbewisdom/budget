@@ -1,14 +1,20 @@
-import { useReducer } from "react"
+import { useReducer, useRef } from "react"
 import Input from "../Layout/Input"
 import classes from "./Logins.module.css"
 
 const check = (state, action) => {
     if (action.type === "EMAIL") {
-        return {email: action.item, isValid: action.item.includes("@")}
-    } else if (action.type === "EMAIL") {
-        return {email: state.email, isValid: action.email.includes("@")}
-    }
+        return { 
+            email: action.item, 
+            isValid: action.item.includes("@")
+        }
 
+    } else if (action.type === "EMAIL") {
+        return { 
+            email: state.email, 
+            isValid: action.email.includes("@")
+        }
+    }
     return {
         email: "",
         isValid: false
@@ -23,6 +29,8 @@ const Logins = (props) => {
         email: "",
         isValid: null
     })
+    
+    const emailRef = useRef()
 
     const emailChangeHandler = (event) => {
         dispatchEmail({type: "EMAIL", item: event.target.value})
@@ -35,10 +43,10 @@ const Logins = (props) => {
 
         } else {
             console.log(enteredEmail.email)
+            emailRef.current.value = ""
         }
         
     }
-
 
     return (
         <form onSubmit={submitHandler}>
@@ -46,18 +54,19 @@ const Logins = (props) => {
                 <Input 
                     label = "E-mail :"
                     input = {{
-                        type: props.email,
-                        id: props.email
+                        type: "email",
+                        id: "email"
                     }}
                     onChange = {emailChangeHandler}
                     value = {enteredEmail.email}
+                    ref={emailRef}
                 />
 
                 <Input 
                     label = "Password :"
                     input = {{
-                        type: props.password,
-                        id: props.password
+                        type: "password",
+                        id: "password"
                     }}
                 />
                 <div className={classes.butt}>
