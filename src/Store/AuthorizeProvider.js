@@ -6,7 +6,7 @@ const AuthorizeProvider = (props) => {
     const [isLogin, setIsLogin] = useState(false)
 
     const loginHandler = (email, password) => {
-        setIsLogin(true)
+        setIsLogin(true);
     }
 
     const properties = {
