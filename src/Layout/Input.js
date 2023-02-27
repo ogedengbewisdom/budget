@@ -12,7 +12,6 @@ const Input = React.forwardRef((props, ref) => {
                 onChange={props.onChange} 
                 value={props.value} 
                 ref={ref}
-                isValid= {props.isValid}
                 onBlur= {props.onBlur}
              />
         </div>
