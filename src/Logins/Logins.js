@@ -1,18 +1,23 @@
-import { useReducer, useRef } from "react"
+import { useReducer } from "react"
 import Input from "../Layout/Input"
 import classes from "./Logins.module.css"
 
-const check = (state, action) => {
+const checkEmailObj = {
+    email: "",
+    isValid: null
+}
+
+const checkEmail = (state, action) => {
     if (action.type === "EMAIL") {
         return { 
             email: action.item, 
             isValid: action.item.includes("@")
         }
 
-    } else if (action.type === "EMAIL") {
+    } else if (action.type === "EMAIL_BLUR") {
         return { 
             email: state.email, 
-            isValid: action.email.includes("@")
+            isValid: state.email.includes("@")
         }
     }
     return {
@@ -25,27 +30,23 @@ const check = (state, action) => {
 const Logins = (props) => {
 
     // const [enteredEmail, setEnteredEmail] = useState("")
-    const [enteredEmail, dispatchEmail] = useReducer(check, {
-        email: "",
-        isValid: null
-    })
+    const [enteredEmail, dispatchEmail] = useReducer(checkEmail, checkEmailObj)
     
-    const emailRef = useRef()
+    
 
     const emailChangeHandler = (event) => {
         dispatchEmail({type: "EMAIL", item: event.target.value})
     }
 
+    const emailBlur = () => {
+        dispatchEmail({type: "EMAIL_BLUR"})
+    }
+
     const submitHandler = (event) => {
         event.preventDefault()
-        if (!enteredEmail.isValid) {
-            return;
-
-        } else {
+        if (enteredEmail.isValid) {
             console.log(enteredEmail.email)
-            emailRef.current.value = ""
         }
-        
     }
 
     return (
@@ -59,7 +60,8 @@ const Logins = (props) => {
                     }}
                     onChange = {emailChangeHandler}
                     value = {enteredEmail.email}
-                    ref={emailRef}
+                    onBlur = {emailBlur}
+                    isValid = {enteredEmail.isValid}
                 />
 
                 <Input 
