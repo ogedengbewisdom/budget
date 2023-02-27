@@ -5,7 +5,7 @@ import Logins from "./Logins/Logins";
 function App() {
 
   const [isLogin, setIsLogin] = useState(false)
-  const loginHandler = () => {
+  const loginHandler = (email, password) => {
     setIsLogin(true)
   }
   return (
