@@ -17,5 +17,14 @@
     border: none;
     border-radius: 5px;
     outline: none;
-    
+}
+
+.inputs input:focus {
+    background-color: rgb(198, 227, 198);
+    border: 2px solid darkgreen;
+}
+
+.inputs.invalid input {
+    border: 2px solid red;
+    background-color: rgba(255, 195, 195, 0.999);
 }
