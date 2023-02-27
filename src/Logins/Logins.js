@@ -81,7 +81,7 @@ const Logins = (props) => {
     const submitHandler = (event) => {
         event.preventDefault()
         if (enteredEmail.isValid && enteredPassword.isValid) {
-            console.log(enteredEmail.email, enteredPassword.password)
+            props.onLogin(enteredEmail.email, enteredPassword.password)
         }
     }
 
