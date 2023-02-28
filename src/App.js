@@ -1,17 +1,16 @@
-import { Fragment, useState } from "react";
+import React, { Fragment, useContext } from "react";
 import Home from "./Home/Home";
 import Logins from "./Logins/Logins";
+import AuthorizeProps from "./Store/auth_context";
 
 function App() {
 
-  const [isLogin, setIsLogin] = useState(false)
-  const loginHandler = (email, password) => {
-    setIsLogin(true)
-  }
+  const authctx = useContext(AuthorizeProps)
+
   return (
     <Fragment>
       <Home />
-      {!isLogin && <Logins onLogin = {loginHandler}/>}
+      {!authctx.isLogin && <Logins />}
     </Fragment>
   );
 }
