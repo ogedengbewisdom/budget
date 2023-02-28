@@ -1,5 +1,6 @@
-import { useReducer } from "react"
+import { useContext, useReducer } from "react"
 import Input from "../Layout/Input"
+import AuthorizeProps from "../Store/auth_context"
 import classes from "./Logins.module.css"
 
 const checkEmailObj = {
@@ -59,6 +60,8 @@ const Logins = (props) => {
     const [enteredEmail, dispatchEmail] = useReducer(checkEmail, checkEmailObj)
 
     const [enteredPassword, dispatchPassword] = useReducer(checkPassword, checkPasswordObj)
+
+    const authctx = useContext(AuthorizeProps)
     
     
 
@@ -81,7 +84,7 @@ const Logins = (props) => {
     const submitHandler = (event) => {
         event.preventDefault()
         if (enteredEmail.isValid && enteredPassword.isValid) {
-            props.onLogin(enteredEmail.email, enteredPassword.password)
+            authctx.onLogin(enteredEmail.email, enteredPassword.password)
         }
     }
 
@@ -112,7 +115,7 @@ const Logins = (props) => {
                     onBlur = {passwordBlur}
                 />
                 <div className={classes.butt}>
-                    <button>Logins</button>
+                    <button className={classes.but}>Logins</button>
                 </div>
             </div>
 
