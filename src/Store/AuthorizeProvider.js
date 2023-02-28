@@ -9,14 +9,23 @@ const AuthorizeProvider = (props) => {
         setIsLogin(true);
     }
 
-    const properties = {
-        isLogin: isLogin,
-        onLogin: loginHandler
+    const logoutHandler = () => {
+        setIsLogin(false)
     }
 
-    return (<AuthorizeProps.Provider values= {properties}>
-        {props.children}
-    </AuthorizeProps.Provider>)
+    const properties = {
+        isLogin: isLogin,
+        onLogin: loginHandler,
+        onLogout: logoutHandler
+    }
+
+    return (
+
+            <AuthorizeProps.Provider value = {properties}>
+                {props.children}
+            </AuthorizeProps.Provider>
+            
+    )
 }
 
 export default AuthorizeProvider
