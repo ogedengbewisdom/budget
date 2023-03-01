@@ -1,8 +1,21 @@
-import React from "react"
+import React, { useImperativeHandle, useRef } from "react"
 
 import classes from "./Input.module.css"
 
 const Input = React.forwardRef((props, ref) => {
+
+    const inputRef = useRef()
+
+    const activate = () => {
+        return inputRef.current.focus()
+    }
+
+    useImperativeHandle(ref, () => {
+       return { 
+        focus: activate 
+    }
+    
+    })
 
     return (
         <div className={`${classes.inputs} ${props.isValid === false ? classes.invalid : ""}`}>
@@ -11,7 +24,7 @@ const Input = React.forwardRef((props, ref) => {
                 {...props.input} 
                 onChange={props.onChange} 
                 value={props.value} 
-                ref={ref}
+                ref={inputRef}
                 onBlur= {props.onBlur}
              />
         </div>
