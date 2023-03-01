@@ -8,17 +8,20 @@ function App() {
 
   const authctx = useContext(AuthorizeProps)
 
-  const homePortal = (props) => {
-    return <Home />
+  const HomePortal = () => {
+    return (<Home />)
   }
 
-  const loginsPortal = props => {
-    return {!authctx.isLogin && <Logins />}
+  const LoginPortal = () => {
+    return !authctx.isLogin && <Logins />
   }
+
+
 
   return (
     <Fragment>  
-      {ReactDOM.createPortal(<loginsPortal />, document.getElementById("do"))}  
+      {ReactDOM.createPortal(<HomePortal />, document.getElementById("header"))} 
+      {ReactDOM.createPortal(<LoginPortal />, document.getElementById("login"))}      
     </Fragment>
   );
 }
