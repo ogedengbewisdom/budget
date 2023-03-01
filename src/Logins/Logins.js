@@ -1,4 +1,4 @@
-import { useContext, useReducer } from "react"
+import { useContext, useEffect, useReducer, useRef, useState } from "react"
 import Input from "../Layout/Input"
 import AuthorizeProps from "../Store/auth_context"
 import classes from "./Logins.module.css"
@@ -25,7 +25,7 @@ const checkPassword = (state, action) => {
     } else if ( action.type === "PASSWORD_BLUR") {
         return {
             password: state.password,
-            isValid: state.isValid
+            isValid: state.password.trim().length > 6
         }
     }
         return {
@@ -60,10 +60,26 @@ const Logins = (props) => {
     const [enteredEmail, dispatchEmail] = useReducer(checkEmail, checkEmailObj)
 
     const [enteredPassword, dispatchPassword] = useReducer(checkPassword, checkPasswordObj)
-
+    
+    const [formIsValid, setFormIsValid] = useState(false)
     const authctx = useContext(AuthorizeProps)
-    
-    
+
+    const passwordInputRef = useRef()
+    const emailInputRef = useRef()
+
+    const {isValid: emailvalid} = enteredEmail
+    const {isValid: passwordvalid} = enteredPassword
+
+    useEffect( () => {
+        let timeOut = setTimeout(() => {
+            console.log("go")
+            setFormIsValid(emailvalid, passwordvalid)
+        }, 200)
+        return () => {
+            console.log("clear")
+            clearTimeout(timeOut)
+        }
+    }, [emailvalid, passwordvalid])
 
     const emailChangeHandler = (event) => {
         dispatchEmail({type: "EMAIL", item: event.target.value})
@@ -83,8 +99,12 @@ const Logins = (props) => {
 
     const submitHandler = (event) => {
         event.preventDefault()
-        if (enteredEmail.isValid && enteredPassword.isValid) {
+        if (formIsValid) {
             authctx.onLogin(enteredEmail.email, enteredPassword.password)
+        } else if (!enteredEmail.email) {
+            emailInputRef.current.focus()
+        } else {
+            passwordInputRef.current.focus()
         }
     }
 
@@ -101,6 +121,7 @@ const Logins = (props) => {
                     value = {enteredEmail.email}
                     onBlur = {emailBlur}
                     isValid = {enteredEmail.isValid}
+                    ref = {emailInputRef}
                 />
 
                 <Input 
@@ -113,6 +134,7 @@ const Logins = (props) => {
                     value = {enteredPassword.password}
                     isValid = {enteredPassword.isValid}
                     onBlur = {passwordBlur}
+                    ref = {passwordInputRef}
                 />
                 <div className={classes.butt}>
                     <button className={classes.but}>Logins</button>
