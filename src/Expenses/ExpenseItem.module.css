@@ -1,0 +1,11 @@
+
+
+.container {
+    width: 90%;
+    max-width: 50rem;
+    background-color: aqua;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
