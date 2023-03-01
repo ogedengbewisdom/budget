@@ -3,6 +3,7 @@ import Home from "./Home/Home";
 import Logins from "./Logins/Logins";
 import AuthorizeProps from "./Store/auth_context";
 import ReactDOM from "react-dom";
+import Expenses from "./Expenses/Expenses";
 
 function App() {
 
@@ -21,7 +22,8 @@ function App() {
   return (
     <Fragment>  
       {ReactDOM.createPortal(<HomePortal />, document.getElementById("header"))} 
-      {ReactDOM.createPortal(<LoginPortal />, document.getElementById("login"))}      
+      {ReactDOM.createPortal(<LoginPortal />, document.getElementById("login"))} 
+      <Expenses />     
     </Fragment>
   );
 }
