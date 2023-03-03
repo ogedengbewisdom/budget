@@ -1,10 +1,15 @@
+import Card from "../Layout/Card"
 import ExpenseItem from "./ExpenseItem"
+import classes from "./Expenses.module.css"
 
 const Expenses = () => {
     return (
-        <div>
+        <Card className={classes.expenses}>
             <ExpenseItem />
-        </div>
+            <ExpenseItem />
+            <ExpenseItem />
+            <ExpenseItem />
+        </Card>
     )
 }
 
