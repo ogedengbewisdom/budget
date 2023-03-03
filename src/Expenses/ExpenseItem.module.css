@@ -1,11 +1,29 @@
 
 
 .container {
-    width: 90%;
-    max-width: 50rem;
-    background-color: aqua;
+    width: 100%;
+    max-width: 60rem;
+    background-color: rgb(150, 154, 161);
     margin: auto;
+    margin-top: 0.8rem;
     display: flex;
-    justify-content: space-around;
-    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    font-family: 'Times New Roman', Times, serif;
 }
+
+.amount {
+    background-color: rgb(118, 124, 135);
+    padding: 0.8rem 1rem;
+    border: 2px solid rgb(136, 117, 117);
+    border-radius: 8px;
+}
+
+.price {
+    background-color: rgb(118, 124, 135);
+    padding: 1rem;
+    border: 2px solid rgb(136, 117, 117);
+    border-radius: 8px; 
+}
+
