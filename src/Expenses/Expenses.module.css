@@ -5,4 +5,16 @@
     max-width: 65rem;
     padding: 1rem;
     margin: auto;
+    animation: expenses-appear 2s ease-in-out;
+}
+
+@keyframes expenses-appear {
+    from {
+        opacity: 0;
+        transform: translateY(3rem)
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
 }
