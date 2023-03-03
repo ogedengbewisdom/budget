@@ -11,11 +11,11 @@ const ExpenseDate = props => {
     
     const year = props.date.getFullYear()
     return (
-        <Card className={classes.shield} >
-            <div className={classes.shields}>
-                <div className={classes.shieldYear}>{year}</div>
-                <div className={classes.shieldDate}>{date}</div>
-                <div className={classes.shieldMonth}>{month}</div>
+        <Card className={classes.date} >
+            <div className={classes.dates}>
+                <div className={classes.dateYear}>{year}</div>
+                <div className={classes.dateDate}>{date}</div>
+                <div className={classes.dateMonth}>{month}</div>
             </div>
         </Card>
     )
