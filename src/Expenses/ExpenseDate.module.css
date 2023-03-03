@@ -1,0 +1,31 @@
+.shield {
+    background-color: rgb(211, 200, 200);
+    width: 20%;
+    max-width: 7rem;
+}
+
+.shields {
+    margin: 0.8rem;
+}
+
+.shieldYear {
+    margin-left: 1.2rem;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.shieldDate {
+    margin-left: 1.8rem;
+    margin-top: 0.3rem;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.shieldMonth {
+    
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
