@@ -1,21 +1,21 @@
-.shield {
+.date {
     background-color: rgb(211, 200, 200);
     width: 20%;
     max-width: 7rem;
 }
 
-.shields {
+.dates {
     margin: 0.8rem;
 }
 
-.shieldYear {
+.dateYear {
     margin-left: 1.2rem;
     font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
 }
 
-.shieldDate {
+.dateDate {
     margin-left: 1.8rem;
     margin-top: 0.3rem;
     font-weight: bold;
@@ -23,7 +23,7 @@
     font-size: 20px;
 }
 
-.shieldMonth {
+.dateMonth {
     
     font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
