@@ -4,6 +4,7 @@ import Logins from "./Logins/Logins";
 import AuthorizeProps from "./Store/auth_context";
 import ReactDOM from "react-dom";
 import Expenses from "./Expenses/Expenses";
+import ExpenseCtxProvider from "./Store/ExpenseCtxProvider";
 
 function App() {
 
@@ -23,7 +24,9 @@ function App() {
     <Fragment>  
       {ReactDOM.createPortal(<HomePortal />, document.getElementById("header"))} 
       {ReactDOM.createPortal(<LoginPortal />, document.getElementById("login"))} 
-      <Expenses />     
+      <ExpenseCtxProvider>
+          <Expenses />
+      </ExpenseCtxProvider>     
     </Fragment>
   );
 }
