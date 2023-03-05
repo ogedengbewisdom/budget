@@ -13,11 +13,25 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
+.datetitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.description {
+    display: flex;
+}
+.title {
+    align-items: center;
+    margin-left: 1rem;
+}
 .amount {
     background-color: rgb(118, 124, 135);
     padding: 0.8rem 1rem;
     border: 2px solid rgb(136, 117, 117);
     border-radius: 8px;
+    margin-right: 0.7rem;
 }
 
 .price {
