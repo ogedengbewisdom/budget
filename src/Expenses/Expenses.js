@@ -11,7 +11,7 @@ const Expenses = () => {
         <Card className={classes.expenses}>
             {expCtx.expenseArray.map(data =>
             <ExpenseItem 
-            key={Math.random()}
+            key={Math.random().toString()}
             title={data.title} 
             date= {data.date}
             price={data.price}
