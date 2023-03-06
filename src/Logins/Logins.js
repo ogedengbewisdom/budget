@@ -73,7 +73,7 @@ const Logins = (props) => {
     useEffect( () => {
         let timeOut = setTimeout(() => {
             console.log("go")
-            setFormIsValid(emailvalid, passwordvalid)
+            setFormIsValid(emailvalid && passwordvalid)
         }, 200)
         return () => {
             console.log("clear")
@@ -101,7 +101,7 @@ const Logins = (props) => {
         event.preventDefault()
         if (formIsValid) {
             authctx.onLogin(enteredEmail.email, enteredPassword.password)
-        } else if (!enteredEmail.email) {
+        } else if (!emailvalid) {
             emailInputRef.current.focus()
         } else {
             passwordInputRef.current.focus()
