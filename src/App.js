@@ -25,8 +25,8 @@ function App() {
     <Fragment>  
       {ReactDOM.createPortal(<HomePortal />, document.getElementById("header"))} 
       {ReactDOM.createPortal(<LoginPortal />, document.getElementById("login"))}
-      <NewExpense /> 
       <ExpenseCtxProvider>
+      <NewExpense /> 
           <Expenses />
       </ExpenseCtxProvider>     
     </Fragment>
