@@ -5,7 +5,10 @@ import AuthorizeProps from "./Store/auth_context";
 import ReactDOM from "react-dom";
 import Expenses from "./Expenses/Expenses";
 import ExpenseCtxProvider from "./Store/ExpenseCtxProvider";
-import NewExpense from "./NewExpense/NewExpense";
+// import NewExpense from "./NewExpense/NewExpense";
+// import AddButton from "./NewExpense/AddButton";
+// import NewBudget from "./NewExpense/NewBudget";
+import NewBudgets from "./NewExpense/NewBudget";
 
 function App() {
 
@@ -26,8 +29,8 @@ function App() {
       {ReactDOM.createPortal(<HomePortal />, document.getElementById("header"))} 
       {ReactDOM.createPortal(<LoginPortal />, document.getElementById("login"))}
       <ExpenseCtxProvider>
-      <NewExpense /> 
-          <Expenses />
+          {authctx.isLogin && <NewBudgets />}
+          {authctx.isLogin && <Expenses />}
       </ExpenseCtxProvider>     
     </Fragment>
   );
