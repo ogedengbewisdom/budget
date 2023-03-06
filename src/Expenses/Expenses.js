@@ -9,13 +9,13 @@ const Expenses = () => {
     const expCtx = useContext(ExpenseCtx)
     return (
         <Card className={classes.expenses}>
-            {expCtx.expenseArray.map(pros =>
+            {expCtx.expenseArray.map(data =>
             <ExpenseItem 
             key={Math.random()}
-            title={pros.title} 
-            date= {pros.date}
-            price={pros.price}
-            amount={pros.amount}
+            title={data.title} 
+            date= {data.date}
+            price={data.price}
+            amount={data.amount}
             />
             )}
             
