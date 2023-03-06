@@ -1,7 +1,8 @@
 import React from "react"
 
 const ExpenseCtx = React.createContext({
-    expenseArray: []
+    expenseArray: [],
+    addExpense: () => {}
 })
 
 export default ExpenseCtx
