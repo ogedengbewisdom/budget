@@ -98,7 +98,7 @@ const priceReducer = (state, action) => {
         isValid: false
     }
 }
-const NewExpense = () => {
+const NewExpense = (props) => {
 
     const [enteredTitle, dispatchTitle] = useReducer(titleReducer, titleObj)
     const [enteredDate, dispatchDate] = useReducer(dateReducer, dateObj)
@@ -247,7 +247,7 @@ const NewExpense = () => {
                         </div>
                         <div className={classes.expensebut}>
                             <button className={classes.expensebutt}>Add Expense</button>
-                            <button className={classes.expensebutt}>Cancel</button>
+                            <button type="button" onClick={props.onCancel} className={classes.expensebutt}>Cancel</button>
                         </div>
                         
                 </Card>
