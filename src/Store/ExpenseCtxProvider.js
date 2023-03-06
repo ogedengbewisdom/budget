@@ -29,16 +29,27 @@ const expenseDataObj = {
 }
 
 const expenseReducer = (state, action) => {
+    if (action.type === "ADD_EXPENSE") {
+        const updatedExpenses = [...state.item]
+        updatedExpenses.unshift(action.val)
+        return {
+            item: updatedExpenses
+        }
+    }
     return expenseDataObj
 }
+
 const ExpenseCtxProvider = props => {
 
     const [expenseData, dispatchExpenseData] = useReducer(expenseReducer, expenseDataObj)
 
-
+    const addExpenseHandler = (datas) => {
+        dispatchExpenseData({type: "ADD_EXPENSE", val: datas})
+    }
 
     const myData = {
         expenseArray: expenseData.item,
+        addExpense: addExpenseHandler
     }
 
     return (
