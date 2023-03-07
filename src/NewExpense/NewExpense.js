@@ -186,6 +186,7 @@ const NewExpense = (props) => {
 
     return (
             <form onSubmit={submitExpenseHandler}>
+                
                 <Card className={classes.newexpenses}>
                     <div className={classes.newexpense}>
                     <div className={classes.newexpensefirst}>
