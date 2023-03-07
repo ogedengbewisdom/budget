@@ -1,7 +1,6 @@
 import { Fragment, useState } from "react"
 import AddButton from "./AddButton"
 import NewExpense from "./NewExpense"
-import classes from "./NewBudget.module.css"
 
 
 const NewBudgets = () => {
@@ -19,7 +18,7 @@ const NewBudgets = () => {
     let addingNewExpense = <AddButton onClick={openFormHandler}/>
 
     if (showForm) {
-        addingNewExpense = <div className={classes.backdrop} onClick={closeFormHandler}><NewExpense className={classes.comeup} onCancel={closeFormHandler}/></div>
+        addingNewExpense = <NewExpense onCancel={closeFormHandler}/>
     }
     return (
         <Fragment>
