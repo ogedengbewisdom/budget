@@ -8,6 +8,12 @@
     animation: expenses-appear 2s ease-in-out;
 }
 
+.expenseText {
+    font-family:  Georgia, 'Times New Roman', Times, serif;
+    color: whitesmoke;
+    font-size: medium;
+    font-weight: 100;
+}
 @keyframes expenses-appear {
     from {
         opacity: 0;
