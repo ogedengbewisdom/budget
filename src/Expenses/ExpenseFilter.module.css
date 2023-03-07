@@ -1,0 +1,27 @@
+
+
+.filteryear {
+    color: white;
+    padding: 1rem;
+    font-weight: bolder;
+}
+
+.filteryearControl {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filteryear select {
+    padding: 0.5rem;
+    width: 20%;
+    max-width: 6rem;
+    font-weight: bold;
+    outline: none;
+    margin-right: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filteryear label {
+    margin-left: 0.7rem;
+}
