@@ -5,9 +5,6 @@ import AuthorizeProps from "./Store/auth_context";
 import ReactDOM from "react-dom";
 import Expenses from "./Expenses/Expenses";
 import ExpenseCtxProvider from "./Store/ExpenseCtxProvider";
-// import NewExpense from "./NewExpense/NewExpense";
-// import AddButton from "./NewExpense/AddButton";
-// import NewBudget from "./NewExpense/NewBudget";
 import NewBudgets from "./NewExpense/NewBudget";
 
 function App() {
