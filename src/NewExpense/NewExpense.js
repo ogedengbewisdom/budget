@@ -172,6 +172,10 @@ const NewExpense = (props) => {
                 price: enteredPrice.price
             }
           expCtx.addExpense(newExpeses)
+          dispatchTitle({type: "ADD_TITLE", val: ""})
+          dispatchDate({type: "ADD_DATE", val: ""})
+          dispatchAmount({type: "ADD_AMOUNT", val: ""})
+          dispatchPrice({type: "ADD_PRICE", val: ""})
           
         } else if (!titleIsValid) {
             titleInputRef.current.focus()
